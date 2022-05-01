@@ -2,7 +2,7 @@
 import java.util.Scanner;
 
 /**
- * To check equality of two lines based on the end points
+ * To compare two lines based on the end points,
  */
 public class LineComparison
 {
@@ -23,28 +23,27 @@ public class LineComparison
         }
          return array;
     }
-    //To check the equality of 2 lines
-    public String equality(){
-        String X="Equal";
-        String Y="Not Equal";
-        LineComparison d1=new LineComparison();
-        LineComparison d2=new LineComparison();
-        int [] a1=new int[4];
-        int [] a2=new int[4];
+    //To check Compare 2 lines
+    public void compare() {
+        LineComparison d1 = new LineComparison();
+        LineComparison d2 = new LineComparison();
+        int[] a1 = new int[4];
+        int[] a2 = new int[4];
         System.out.println("Enter the coordinates of 1st Line:");
-        a1=d1.coordinatescollection();
+        a1 = d1.coordinatescollection();
         System.out.println("Enter the coordinates of 2nd Line:");
-        a2=d2.coordinatescollection();
-        double dista1=d1.twopointdistance(a1);
-        double dista2=d2.twopointdistance(a2);
-        if (dista1==dista2)
-            return X;
+        a2 = d2.coordinatescollection();
+        double dista1 = d1.twopointdistance(a1);
+        double dista2 = d2.twopointdistance(a2);
+        if (dista1 == dista2){
+            System.out.println("The 2 lines are Equal");}
+        else if (dista1 > dista2){
+            System.out.println("1st line is greater than 2nd line");}
         else
-            return Y;
+            System.out.println("2nd line is greater than 1st line");
     }
-
     public static void main(String[] args) {
         LineComparison Comp=new LineComparison();
-        System.out.println("The two lines are "+ Comp.equality());
+        Comp.compare();
     }
 }
